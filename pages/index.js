@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       {/* Navigation Bar */}
-      <header className="flex items-center justify-between px-8 py-5 bg-white shadow-md sticky top-0 z-50">
+      <header className="flex items-center justify-between px-8 py-5 bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
           <img src="/logo.png" alt="Vikrin Logo" className="h-10 w-auto" />
           <span className="text-2xl font-bold text-gray-900">Vikrin</span>
@@ -70,6 +70,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="bg-gray-50 border rounded-xl p-6 shadow hover:shadow-xl transition"
               >
+                <img src="/vercel.svg" alt="Project Screenshot" className="mb-4 rounded" />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
                 <p className="text-gray-600 text-sm">A modern, responsive design tailored for conversion and performance.</p>
               </motion.div>
