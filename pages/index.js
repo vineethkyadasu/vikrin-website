@@ -19,23 +19,23 @@ export default function Home() {
       </header>
 
       <main className="min-h-screen bg-white text-gray-900">
-        {/* Hero Section */}
-        <section className="text-center py-28 px-6 bg-gray-50">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            Enterprise-Grade Websites for Every Scale
-          </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-gray-600">
-            We create fast, scalable, and visually stunning digital experiences for startups, enterprises, and everyone in between.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a href="#contact" className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700">
-              Get Started
-            </a>
-            <a href="#services" className="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50">
-              View Services
-            </a>
-          </div>
-        </section>
+        {/* Hero Section Inspired by GrowthSchool */}
+<section className="text-center py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+  <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+    We Build Scalable, Stunning Websites
+  </h1>
+  <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300">
+    From e-commerce and education to custom platforms — Vikrin delivers performance, design, and results.
+  </p>
+  <div className="flex justify-center space-x-4">
+    <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
+      Get Started
+    </a>
+    <a href="#portfolio" className="bg-transparent border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+      See Our Work
+    </a>
+  </div>
+</section>
 
         {/* Services Section */}
         <section id="services" className="py-20 px-6 max-w-6xl mx-auto">
