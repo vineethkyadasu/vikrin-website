@@ -20,22 +20,22 @@ export default function Home() {
 
       <main className="min-h-screen bg-white text-gray-900">
         {/* Hero Section Inspired by GrowthSchool */}
-<section className="text-center py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-  <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-    We Build Scalable, Stunning Websites
-  </h1>
-  <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300">
-    From e-commerce and education to custom platforms — Vikrin delivers performance, design, and results.
-  </p>
-  <div className="flex justify-center space-x-4">
-    <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-      Get Started
-    </a>
-    <a href="#portfolio" className="bg-transparent border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-      See Our Work
-    </a>
-  </div>
-</section>
+        <section className="text-center py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            We Build Scalable, Stunning Websites
+          </h1>
+          <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300">
+            From e-commerce and education to custom platforms — Vikrin delivers performance, design, and results.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
+              Get Started
+            </a>
+            <a href="#portfolio" className="bg-transparent border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+              See Our Work
+            </a>
+          </div>
+        </section>
 
         {/* Services Section */}
         <section id="services" className="py-20 px-6 max-w-6xl mx-auto">
@@ -70,11 +70,19 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="bg-gray-50 border rounded-xl p-6 shadow hover:shadow-xl transition"
               >
-                <img
-  src={`/projects/${title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}.jpg`}
-  alt={title}
-  className="mb-4 rounded w-full h-48 object-cover"
-/>
+                {title === "E-Commerce Fashion Store" ? (
+                  <img
+                    src="/projects/ecommerce-fashion-store.jpg"
+                    alt={title}
+                    className="mb-4 rounded w-full h-48 object-cover"
+                  />
+                ) : (
+                  <img
+                    src={`/projects/${title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}.jpg`}
+                    alt={title}
+                    className="mb-4 rounded w-full h-48 object-cover"
+                  />
+                )}
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
                 <p className="text-gray-600 text-sm">A modern, responsive design tailored for conversion and performance.</p>
               </motion.div>
