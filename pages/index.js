@@ -79,29 +79,73 @@ export default function Home() {
 </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-20 bg-white px-6 max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-14">Portfolio Highlights</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {["E-Commerce Fashion Store", "Online Learning Portal", "Real Estate Listing Site", "Health Clinic Booking", "Personal Brand Portfolio", "Consulting Firm Site"].map((title, index) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-gray-50 border rounded-xl p-6 shadow hover:shadow-xl transition"
-              >
-                <img
-                  src={`/projects/${title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}.jpg`}
-                  alt={title}
-                  className="mb-4 rounded w-full h-48 object-cover"
-                />
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-                <p className="text-gray-600 text-sm">A modern, responsive design tailored for conversion and performance.</p>
-              </motion.div>
-            ))}
+<section id="portfolio" className="py-20 bg-white px-6 max-w-6xl mx-auto">
+  <h2 className="text-4xl font-bold text-center mb-14">Portfolio Highlights</h2>
+
+  {/* Web Development Projects */}
+  <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Web Development</h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+    {[
+      "E-Commerce Fashion Store",
+      "Online Learning Portal",
+      "Real Estate Listing Site",
+      "Health Clinic Booking",
+      "Personal Brand Portfolio",
+      "Consulting Firm Site",
+    ].map((title, index) => {
+      const imageName = title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '');
+      return (
+        <motion.div
+          key={title}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
+        >
+          <div className="overflow-hidden rounded-xl mb-4">
+            <img
+              src={`/projects/${imageName}.jpg`}
+              alt={title}
+              className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
+            />
           </div>
-        </section>
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
+          <p className="text-gray-600 text-sm">Custom-built, responsive designs made to perform and impress.</p>
+        </motion.div>
+      );
+    })}
+  </div>
+
+  {/* Digital Marketing Projects */}
+  <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Digital Marketing</h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    {[
+      { title: "SEO Growth Campaign", image: "seo-campaign", desc: "Ranked local businesses on Page 1 in just 3 months." },
+      { title: "Social Media Blitz", image: "social-media", desc: "Doubled engagement through custom campaigns and reels." },
+      { title: "Lead Gen Landing Page", image: "lead-gen", desc: "Built and promoted landing page with 12% conversion rate." },
+    ].map(({ title, image, desc }, index) => (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
+      >
+        <div className="overflow-hidden rounded-xl mb-4">
+          <img
+            src={`/projects/${image}.jpg`}
+            alt={title}
+            className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
+          />
+        </div>
+        <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
+        <p className="text-gray-600 text-sm">{desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
         {/* Why Choose Us */}
         <section id="why-us" className="py-20 bg-gray-100 px-6">
