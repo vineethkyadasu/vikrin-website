@@ -14,44 +14,50 @@ export default function Home() {
           <Link href="#services" className="hover:text-blue-600">Services</Link>
           <Link href="#portfolio" className="hover:text-blue-600">Portfolio</Link>
           <Link href="#why-us" className="hover:text-blue-600">Why Us</Link>
+          <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
           <Link href="#contact" className="hover:text-blue-600">Contact</Link>
         </nav>
       </header>
 
       <main className="min-h-screen bg-white text-gray-900">
-        {/* Hero Section Inspired by GrowthSchool */}
+        {/* Hero Section */}
         <section className="text-center py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            We Build Scalable, Stunning Websites
+            Digital Powerhouse for Websites & Marketing
           </h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300">
-            From e-commerce and education to custom platforms — Vikrin delivers performance, design, and results.
+            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
           </p>
           <div className="flex justify-center space-x-4">
             <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-              Get Started
+              Let's Talk
             </a>
-            <a href="#portfolio" className="bg-transparent border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+            <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
               See Our Work
             </a>
           </div>
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-20 px-6 max-w-6xl mx-auto">
+        <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { title: "E-Commerce", desc: "Custom online stores with full functionality and secure payment integration." },
-              { title: "Education Platforms", desc: "Build scalable LMS platforms, school portals, or course hubs." },
-              { title: "Business Websites", desc: "Professional sites tailored to your brand and business goals." },
-              { title: "Personal Portfolios", desc: "Showcase your skills or resume with a beautifully crafted portfolio." },
-              { title: "Landing Pages", desc: "Marketing and lead generation pages that convert." },
-              { title: "Custom Platforms", desc: "Fully tailored web apps for complex or unique needs." },
-            ].map(({ title, desc }) => (
-              <div key={title} className="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 hover:shadow-2xl transition">
-                <h3 className="text-2xl font-semibold mb-3 text-blue-600">{title}</h3>
-                <p className="text-gray-600">{desc}</p>
+
+          <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {["E-Commerce", "Business Websites", "Custom Platforms"].map(title => (
+              <div key={title} className="p-6 border rounded-xl shadow-md bg-white">
+                <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+                <p className="text-gray-600">{`High-performance ${title.toLowerCase()} built with modern frameworks and UX best practices.`}</p>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="text-2xl font-semibold mb-6 text-blue-700">Digital Marketing</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {["SEO Optimization", "Social Media Management", "Performance Ads"].map(title => (
+              <div key={title} className="p-6 border rounded-xl shadow-md bg-white">
+                <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+                <p className="text-gray-600">{`Boost visibility and traffic with expert-level ${title.toLowerCase()}.`}</p>
               </div>
             ))}
           </div>
@@ -70,19 +76,11 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="bg-gray-50 border rounded-xl p-6 shadow hover:shadow-xl transition"
               >
-                {title === "E-Commerce Fashion Store" ? (
-                  <img
-                    src="/projects/ecommerce-fashion-store.jpg"
-                    alt={title}
-                    className="mb-4 rounded w-full h-48 object-cover"
-                  />
-                ) : (
-                  <img
-                    src={`/projects/${title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}.jpg`}
-                    alt={title}
-                    className="mb-4 rounded w-full h-48 object-cover"
-                  />
-                )}
+                <img
+                  src={`/projects/${title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}.jpg`}
+                  alt={title}
+                  className="mb-4 rounded w-full h-48 object-cover"
+                />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
                 <p className="text-gray-600 text-sm">A modern, responsive design tailored for conversion and performance.</p>
               </motion.div>
@@ -90,22 +88,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why Choose Vikrin Section */}
+        {/* Why Choose Us */}
         <section id="why-us" className="py-20 bg-gray-100 px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-10">Why Choose Vikrin?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              {[
-                { title: "Custom-Coded Excellence", desc: "We don't rely on templates — every line of code is crafted for your brand." },
-                { title: "Enterprise Performance", desc: "Sites that load fast, scale easily, and never lag." },
-                { title: "Responsive by Design", desc: "Every screen matters. Our sites look great on all devices." },
-                { title: "Scalable Architecture", desc: "From one-pagers to full web platforms — we scale with you." },
-                { title: "Ongoing Support", desc: "Launch is just the beginning. We’re here for maintenance and growth." },
-                { title: "Trusted Technology", desc: "Built on Next.js, Vercel, Tailwind — trusted by the web’s best." }
-              ].map(({ title, desc }) => (
-                <div key={title} className="p-6 bg-white rounded-xl border shadow-md hover:shadow-lg">
-                  <h3 className="text-xl font-semibold mb-2 text-blue-600">{title}</h3>
-                  <p className="text-gray-700 text-sm">{desc}</p>
+              {["Enterprise-Ready Code", "Modern UI/UX", "SEO Optimized", "Mobile First", "Speed Obsessed", "Client First Culture"].map(feature => (
+                <div key={feature} className="p-6 bg-white rounded-xl border shadow-md hover:shadow-lg">
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">{feature}</h3>
+                  <p className="text-gray-700 text-sm">We deliver on what matters most — design, performance, and results.</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section id="testimonials" className="py-20 px-6 bg-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-12">What Our Clients Say</h2>
+            <div className="grid md:grid-cols-2 gap-8 text-left">
+              {["Vikrin transformed our online presence!", "Their SEO helped us double our leads.", "Beautiful, fast websites and great team.", "We love their ongoing support."].map((quote, index) => (
+                <div key={index} className="p-6 bg-gray-50 border rounded-xl shadow">
+                  <p className="text-gray-700 italic">“{quote}”</p>
+                  <p className="mt-4 font-semibold text-blue-600">— Happy Client</p>
                 </div>
               ))}
             </div>
@@ -114,14 +120,12 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-white px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Let’s Build Your Website</h2>
-          <p className="text-xl mb-10 text-gray-700">Reach out today to schedule a free consultation and get started.</p>
-          <a
-            href="mailto:hello@vikrin.com"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700"
-          >
+          <h2 className="text-4xl font-bold mb-6">Let’s Build Something Great</h2>
+          <p className="text-xl mb-10 text-gray-700">Reach out today to schedule a free consultation and discuss your goals.</p>
+          <a href="mailto:hello@vikrin.com" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700">
             Contact Us
           </a>
+          <p className="mt-4 text-gray-500 text-sm">Or call us directly at <strong>+91 91777 54434</strong></p>
         </section>
 
         {/* Footer */}
