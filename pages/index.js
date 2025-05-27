@@ -40,29 +40,43 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
+<section id="services" className="py-24 px-6 max-w-6xl mx-auto">
+  <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
 
-          <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {["E-Commerce", "Business Websites", "Custom Platforms"].map(title => (
-              <div key={title} className="p-6 border rounded-xl shadow-md bg-white">
-                <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
-                <p className="text-gray-600">{`High-performance ${title.toLowerCase()} built with modern frameworks and UX best practices.`}</p>
-              </div>
-            ))}
-          </div>
+  <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    {["E-Commerce", "Business Websites", "Custom Platforms"].map((title, index) => (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: index * 0.15 }}
+        className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
+      >
+        <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+        <p className="text-gray-600">{`High-performance ${title.toLowerCase()} built with modern frameworks and UX best practices.`}</p>
+      </motion.div>
+    ))}
+  </div>
 
-          <h3 className="text-2xl font-semibold mb-6 text-blue-700">Digital Marketing</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["SEO Optimization", "Social Media Management", "Performance Ads"].map(title => (
-              <div key={title} className="p-6 border rounded-xl shadow-md bg-white">
-                <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
-                <p className="text-gray-600">{`Boost visibility and traffic with expert-level ${title.toLowerCase()}.`}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+  <h3 className="text-2xl font-semibold mb-6 text-blue-700">Digital Marketing</h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {["SEO Optimization", "Social Media Management", "Performance Ads"].map((title, index) => (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: index * 0.15 }}
+        className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
+      >
+        <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+        <p className="text-gray-600">{`Boost visibility and traffic with expert-level ${title.toLowerCase()}.`}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
         {/* Portfolio Section */}
         <section id="portfolio" className="py-20 bg-white px-6 max-w-6xl mx-auto">
