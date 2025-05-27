@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Code, Layout, TrendingUp, Smartphone, Zap, Users } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -90,13 +91,21 @@ export default function Home() {
 
         {/* Why Choose Us */}
         <section id="why-us" className="py-20 bg-gray-100 px-6">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-10">Why Choose Vikrin?</h2>
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-12">Why Choose Vikrin?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              {["Enterprise-Ready Code", "Modern UI/UX", "SEO Optimized", "Mobile First", "Speed Obsessed", "Client First Culture"].map(feature => (
-                <div key={feature} className="p-6 bg-white rounded-xl border shadow-md hover:shadow-lg">
-                  <h3 className="text-xl font-semibold mb-2 text-blue-600">{feature}</h3>
-                  <p className="text-gray-700 text-sm">We deliver on what matters most — design, performance, and results.</p>
+              {[
+                { icon: <Code className="text-blue-600 w-8 h-8 mb-3" />, title: "Enterprise-Ready Code", desc: "Built for scale, security, and flexibility with industry-standard frameworks." },
+                { icon: <Layout className="text-blue-600 w-8 h-8 mb-3" />, title: "Modern UI/UX", desc: "Designs that are intuitive, attractive, and conversion-focused." },
+                { icon: <TrendingUp className="text-blue-600 w-8 h-8 mb-3" />, title: "SEO Optimized", desc: "Sites that rank higher with fast loading, structured data, and optimized content." },
+                { icon: <Smartphone className="text-blue-600 w-8 h-8 mb-3" />, title: "Mobile First", desc: "Every screen matters — responsive across all devices by default." },
+                { icon: <Zap className="text-blue-600 w-8 h-8 mb-3" />, title: "Speed Obsessed", desc: "Optimized assets, smart lazy loading, and blazing fast hosting with Vercel." },
+                { icon: <Users className="text-blue-600 w-8 h-8 mb-3" />, title: "Client-First Culture", desc: "We collaborate closely and prioritize your goals above all else." },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="p-6 bg-white rounded-xl border shadow-md hover:shadow-lg transition">
+                  {icon}
+                  <h3 className="text-xl font-semibold mb-2 text-blue-700">{title}</h3>
+                  <p className="text-gray-700 text-sm">{desc}</p>
                 </div>
               ))}
             </div>
