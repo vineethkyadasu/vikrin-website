@@ -70,7 +70,11 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="bg-gray-50 border rounded-xl p-6 shadow hover:shadow-xl transition"
               >
-                <img src="/vercel.svg" alt="Project Screenshot" className="mb-4 rounded" />
+                <img
+  src={`/projects/${title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}.jpg`}
+  alt={title}
+  className="mb-4 rounded w-full h-48 object-cover"
+/>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
                 <p className="text-gray-600 text-sm">A modern, responsive design tailored for conversion and performance.</p>
               </motion.div>
