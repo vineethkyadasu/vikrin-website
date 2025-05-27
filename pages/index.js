@@ -30,7 +30,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-4">
             <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-              Let's Talk
+              Let&apos;s Talk
             </a>
             <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
               See Our Work
