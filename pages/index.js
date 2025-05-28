@@ -244,3 +244,6 @@ export default function Home() {
     &copy; {new Date().getFullYear()} Vikrin.com. All rights reserved.
   </footer>
 </main>
+</>
+);
+}
