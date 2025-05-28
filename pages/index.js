@@ -117,12 +117,6 @@ export default function Home() {
       <div id="top"></div>
 
       <main className="bg-[#e5e5e5]">
-        <HeroSection />
-        {/* other sections like Services, Portfolio, Why Us, etc. */}
-      </main>
-    </>
-  );
-}
   <HeroSection />
 
   {/* Services Section */}
