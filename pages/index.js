@@ -54,9 +54,16 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Right Animated Text */}
+    {/* Right Animated Services */}
     <div className="md:w-1/2 flex justify-center text-center">
-      <AnimatedServiceText services={services} />
+      <AnimatedServiceText services={[
+        "E-Commerce Development",
+        "Custom Business Websites",
+        "SEO & Performance Marketing",
+        "Landing Pages",
+        "Lead Generation Funnels",
+        "Social Media Campaigns"
+      ]} />
     </div>
   </div>
 </section>
@@ -220,39 +227,30 @@ function AnimatedServiceText({ services }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex(prev => (prev + 1) % services.length);
+      setIndex((prev) => (prev + 1) % services.length);
     }, 2500);
     return () => clearInterval(timer);
   }, [services.length]);
 
-  const getItem = (offset) => {
-    const newIndex = (index + offset + services.length) % services.length;
-    return services[newIndex];
-  };
+  const getRelativeIndex = (offset) => (index + offset + services.length) % services.length;
 
   return (
-    <div className="h-40 w-full overflow-hidden flex flex-col items-center justify-center relative">
-      {[...Array(5)].map((_, i) => {
-        const offset = i - 2; // -2 to +2
-        const item = getItem(offset);
-        const isCenter = offset === 0;
-
+    <div className="relative h-48 w-full flex flex-col items-center justify-center overflow-hidden">
+      {[ -2, -1, 0, 1, 2 ].map(offset => {
+        const relIndex = getRelativeIndex(offset);
+        const isActive = offset === 0;
         return (
           <motion.div
-            key={item + offset}
-            initial={{ opacity: 0, y: 10 * offset }}
-            animate={{
-              opacity: isCenter ? 1 : 0.4,
-              y: (offset - 2) * 30,
-              scale: isCenter ? 1.1 : 0.9,
-            }}
-            transition={{ duration: 0.5 }}
-            className={`absolute text-xl md:text-2xl font-semibold ${
-              isCenter ? "text-white" : "text-gray-400"
+            key={relIndex}
+            initial={{ opacity: 0, y: offset * 30 }}
+            animate={{ opacity: 1, y: offset * 30 }}
+            exit={{ opacity: 0, y: offset * 30 }}
+            transition={{ duration: 0.6 }}
+            className={`absolute text-center text-white text-lg md:text-2xl transition-opacity duration-500 ${
+              isActive ? 'font-bold scale-110' : 'opacity-40 text-sm'
             }`}
-            style={{ top: "50%", transform: "translateY(-50%)" }}
           >
-            {item}
+            {services[relIndex]}
           </motion.div>
         );
       })}
