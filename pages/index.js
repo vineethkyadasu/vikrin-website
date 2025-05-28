@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Layout, TrendingUp, Smartphone, Zap, Users } from 'lucide-react';
 
 const services = [
@@ -27,6 +27,8 @@ function HeroSection() {
   return (
     <section className="py-24 px-6 bg-[#e5e5e5] text-gray-900">
       <div className="max-w-7xl mx-auto bg-[#042927] bg-grid rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+        
+        {/* LEFT SIDE: Text Content */}
         <div className="md:w-1/2 text-white space-y-6">
           <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
             Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
@@ -43,32 +45,43 @@ function HeroSection() {
             </a>
           </div>
         </div>
-        <div className="md:w-1/2 flex items-center justify-center relative h-64">
-          {[2, 1, 0, -1, -2].map((offset) => {
-            const i = (offset + services.length + index) % services.length;
-            const text = services[i];
-            const isMain = offset === 0;
-            const scale = isMain ? 1 : 0.85;
-            const opacity = isMain ? 1 : 0.3;
-            const translateY = offset * 50;
-            const z = 5 - Math.abs(offset);
-            return (
-              <motion.div
-                key={`${i}-${offset}`}
-                className="absolute w-64 px-6 py-4 rounded-xl text-center border border-white/20 backdrop-blur-md bg-white/10 text-white font-semibold shadow-lg"
-                style={{
-                  transform: `translateY(${translateY}px) scale(${scale})`,
-                  opacity,
-                  zIndex: z,
-                }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity }}
-                transition={{ duration: 0.5 }}
-              >
-                {text}
-              </motion.div>
-            );
-          })}
+
+        {/* RIGHT SIDE: Animated Rotating Card */}
+        <div className="md:w-1/2 h-64 overflow-hidden relative flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={services[index]}
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="px-8 py-6 bg-white/10 text-white font-semibold rounded-xl text-center border border-white/20 shadow-xl w-80"
+            >
+              {services[index]}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+export default HeroSection;
+          <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
+            Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
+          </h1>
+          <p className="text-lg md:text-xl text-white/80">
+            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
+          </p>
+          <div className="pt-4 space-x-4">
+            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
+              Let’s Talk
+            </a>
+            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+              See Our Work
+            </a>
+          </div>
         </div>
       </div>
     </section>
