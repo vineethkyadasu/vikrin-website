@@ -1,4 +1,5 @@
 // pages/index.js
+// pages/index.js
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -14,99 +15,7 @@ const services = [
   'Social Campaigns'
 ];
 
-function AnimatedServiceCarousel({ items }) {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % items.length);
-    }, 2500);
-    return () => clearInterval(timer);
-  }, [items.length]);
-
-  const getItem = (offset) => items[(index + offset + items.length) % items.length];
-
-  return (
-    <div className="relative h-64 flex items-center justify-center overflow-hidden">
-      {[2, 1, 0, -1, -2].map((offset) => {
-        const value = getItem(offset);
-        const key = `${index}-${offset}`;
-        const isMain = offset === 0;
-
-        return (
-          <motion.div
-            key={key}
-            initial={{ opacity: 0, scale: 0.8, y: offset * 30 }}
-            animate={{ opacity: isMain ? 1 : 0.3, scale: isMain ? 1.15 : 0.9, y: offset * 30 }}
-            exit={{ opacity: 0, scale: 0.8, y: offset * 30 }}
-            transition={{ duration: 0.6 }}
-            className={`absolute text-center w-64 px-6 py-4 rounded-xl border border-white/20 bg-white/10 text-white font-semibold shadow-lg backdrop-blur-md ${
-              isMain ? 'text-2xl md:text-3xl' : 'text-sm md:text-base text-slate-300'
-            }`}
-          >
-            {value}
-          </motion.div>
-        );
-      })}
-    </div>
-  );
-}
-
 function HeroSection() {
-  return (
-    <section className="py-24 px-6 bg-white text-gray-900">
-      <div className="max-w-7xl mx-auto bg-[#042927] rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-
-        {/* Left Content */}
-        <div className="md:w-1/2 text-white space-y-6">
-          <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
-            Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
-          </h1>
-          <p className="text-lg md:text-xl text-white/80">
-            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
-          </p>
-          <div className="pt-4 space-x-4">
-            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
-              Let’s Talk
-            </a>
-            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-              See Our Work
-            </a>
-          </div>
-        </div>
-
-        {/* Right Content */}
-        <div className="md:w-1/2">
-          <AnimatedServiceCarousel items={services} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default function Home() {
-  return (
-    <>
-      <header className="flex items-center justify-between px-8 py-5 bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
-        <div className="flex items-center space-x-3">
-          <Image src="/logo.png" alt="Vikrin Logo" width={40} height={40} />
-          <span className="text-2xl font-bold text-gray-900">Vikrin</span>
-        </div>
-        <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <Link href="#services" className="hover:text-blue-600">Services</Link>
-          <Link href="#portfolio" className="hover:text-blue-600">Portfolio</Link>
-          <Link href="#why-us" className="hover:text-blue-600">Why Us</Link>
-          <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
-          <Link href="#contact" className="hover:text-blue-600">Contact</Link>
-        </nav>
-      </header>
-
-
-      {/* ✅ Begin main content wrapper */}
-      <main>
-
-      {/* Hero Section */}
-      export default function HeroSection() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -170,6 +79,31 @@ export default function Home() {
     </section>
   );
 }
+
+export default function Home() {
+  return (
+    <>
+      {/* Navigation Bar */}
+      <header className="flex items-center justify-between px-8 py-5 bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <div className="flex items-center space-x-3">
+          <Image src="/logo.png" alt="Vikrin Logo" width={40} height={40} />
+          <span className="text-2xl font-bold text-gray-900">Vikrin</span>
+        </div>
+        <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
+          <Link href="#services" className="hover:text-blue-600">Services</Link>
+          <Link href="#portfolio" className="hover:text-blue-600">Portfolio</Link>
+          <Link href="#why-us" className="hover:text-blue-600">Why Us</Link>
+          <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
+          <Link href="#contact" className="hover:text-blue-600">Contact</Link>
+        </nav>
+      </header>
+
+
+      {/* ✅ Begin main content wrapper */}
+      <main>
+
+      {/* Hero Section */}
+      <HeroSection />
 
         {/* Services Section */}
         <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
