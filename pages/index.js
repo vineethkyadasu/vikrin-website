@@ -80,7 +80,7 @@ export default function Home() {
     <>
       <header className="flex items-center justify-between px-8 py-5 bg-[#e5e5e5] shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
-          <Image src="/logo.png" alt="Vikrin Logo" width={48} height={48} className="h-12 w-auto" />
+          <Image src="/logo.png" alt="Vikrin Logo" width={64} height={64} className="h-12 w-auto" />
         </div>
         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
           <Link href="#services" className="hover:text-blue-600">Services</Link>
