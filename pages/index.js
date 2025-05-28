@@ -44,7 +44,7 @@ export default function Home() {
     </div>
 
     {/* Right Side */}
-    <div className="text-center md:w-1/2 w-full flex flex-col items-center justify-center relative h-56 md:h-64">
+    <div className="md:w-1/2 w-full flex flex-col items-center justify-center relative h-56 md:h-64">
       <motion.div
         className="absolute text-xl md:text-2xl font-semibold text-white"
         initial={{ y: 50, opacity: 0 }}
