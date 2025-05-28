@@ -2,6 +2,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Code, Layout, TrendingUp, Smartphone, Zap, Users } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const services = [
+  "E-Commerce Development",
+  "Custom Business Websites",
+  "SEO & Performance Marketing",
+  "Landing Pages",
+  "Lead Generation Funnels",
+  "Social Media Campaigns",
+];
 
 export default function Home() {
   return (
@@ -23,10 +34,11 @@ export default function Home() {
 
       <main className="min-h-screen bg-white text-gray-900">
         {/* Hero Section */}
-<section className="py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-    {/* Left Side */}
-    <div className="bg-white/10 p-10 rounded-2xl md:w-1/2 w-full">
+<section className="py-24 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+  <div className="max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0">
+    
+    {/* Left Content */}
+    <div className="md:w-1/2">
       <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
         Digital Powerhouse for Websites & Marketing
       </h1>
@@ -43,39 +55,9 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Right Side */}
-    <div className="md:w-1/2 w-full flex flex-col items-center justify-center relative h-56 md:h-64">
-      <motion.div
-        className="absolute text-xl md:text-2xl font-semibold text-white"
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: -50, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 1.5,
-          ease: "easeInOut",
-        }}
-      >
-        <motion.div
-          key="services"
-          animate={{
-            y: [0, -40, 0],
-            opacity: [1, 0, 1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            times: [0, 0.5, 1],
-          }}
-        >
-          {["E-Commerce", "Custom Websites", "SEO & Marketing", "Landing Pages", "Lead Generation", "Social Media Campaigns"]
-            .map((service, i) => (
-              <motion.div key={i} className="mb-2">{service}</motion.div>
-            ))}
-        </motion.div>
-      </motion.div>
+    {/* Right Animated Text */}
+    <div className="md:w-1/2 flex justify-center text-center">
+      <AnimatedServiceText services={services} />
     </div>
   </div>
 </section>
@@ -230,5 +212,33 @@ export default function Home() {
         </footer>
       </main>
     </>
+  );
+}
+
+function AnimatedServiceText({ services }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex(prev => (prev + 1) % services.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="h-16 flex items-center justify-center text-xl md:text-2xl font-semibold text-white relative overflow-hidden w-full">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={services[index]}
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -30, opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          className="absolute"
+        >
+          {services[index]}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }
