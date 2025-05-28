@@ -94,16 +94,16 @@ export default function Home() {
       <header className="flex items-center justify-between px-8 py-5 bg-[#e5e5e5] shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
           <Link href="#top" scroll={true}>
-  <Image
-    src="/logo.png"
-    alt="Vikrin Logo"
-    width={160}
-    height={48}
-    className="h-12 w-auto cursor-pointer"
-    priority
-    quality={100}
-  />
-</Link>
+            <Image
+              src="/logo.png"
+              alt="Vikrin Logo"
+              width={160}
+              height={48}
+              className="h-12 w-auto cursor-pointer"
+              priority
+              quality={100}
+            />
+          </Link>
         </div>
         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
           <Link href="#services" className="hover:text-blue-600">Services</Link>
@@ -114,9 +114,15 @@ export default function Home() {
         </nav>
       </header>
 
-<div id="top"></div>
+      <div id="top"></div>
 
-<main className="bg-[#e5e5e5]">
+      <main className="bg-[#e5e5e5]">
+        <HeroSection />
+        {/* other sections like Services, Portfolio, Why Us, etc. */}
+      </main>
+    </>
+  );
+}
   <HeroSection />
 
   {/* Services Section */}
