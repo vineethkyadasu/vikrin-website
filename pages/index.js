@@ -27,8 +27,7 @@ function HeroSection() {
   return (
     <section className="py-24 px-6 bg-[#e5e5e5] text-gray-900">
       <div className="max-w-7xl mx-auto bg-[#042927] bg-grid rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-        
-        {/* LEFT SIDE: Text Content */}
+        {/* LEFT SIDE */}
         <div className="md:w-1/2 text-white space-y-6">
           <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
             Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
@@ -37,16 +36,12 @@ function HeroSection() {
             Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
           </p>
           <div className="pt-4 space-x-4">
-            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
-              Let’s Talk
-            </a>
-            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-              See Our Work
-            </a>
+            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">Let’s Talk</a>
+            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">See Our Work</a>
           </div>
         </div>
 
-        {/* RIGHT SIDE: Animated Rotating Card */}
+        {/* RIGHT SIDE */}
         <div className="md:w-1/2 h-64 overflow-hidden relative flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -61,33 +56,12 @@ function HeroSection() {
             </motion.div>
           </AnimatePresence>
         </div>
-
       </div>
     </section>
   );
 }
 
-export default HeroSection;
-          <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
-            Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
-          </h1>
-          <p className="text-lg md:text-xl text-white/80">
-            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
-          </p>
-          <div className="pt-4 space-x-4">
-            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
-              Let’s Talk
-            </a>
-            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-              See Our Work
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
+// ✅ Main Home Component
 export default function Home() {
   return (
     <>
@@ -117,10 +91,10 @@ export default function Home() {
       <div id="top"></div>
 
       <main className="bg-[#e5e5e5]">
-  <HeroSection />
+        <HeroSection />
 
-  {/* Services Section */}
-  <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
+        {/* Services Section */}
+        <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
     <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
 
     <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
@@ -158,7 +132,7 @@ export default function Home() {
     </div>
   </section>
 
-  {/* Portfolio Section */}
+        {/* Portfolio Section */}
   <section id="portfolio" className="py-20 px-6 max-w-6xl mx-auto">
     <h2 className="text-4xl font-bold text-center mb-14">Portfolio Highlights</h2>
 
@@ -215,7 +189,7 @@ export default function Home() {
     </div>
   </section>
 
-  {/* Why Choose Us */}
+        {/* Why Choose Us */}
   <section id="why-us" className="py-20 px-6">
     <div className="max-w-6xl mx-auto text-center">
       <h2 className="text-4xl font-bold mb-12">Why Choose Vikrin?</h2>
@@ -238,7 +212,7 @@ export default function Home() {
     </div>
   </section>
 
-  {/* Testimonials */}
+        {/* Testimonials */}
   <section id="testimonials" className="py-20 px-6">
     <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-4xl font-bold mb-12">What Our Clients Say</h2>
@@ -253,7 +227,7 @@ export default function Home() {
     </div>
   </section>
 
-  {/* Contact Section */}
+        {/* Contact Section */}
   <section id="contact" className="py-24 px-6 text-center">
     <h2 className="text-4xl font-bold mb-6">Let&apos;s Build Something Great</h2>
     <p className="text-xl mb-10 text-gray-700">Reach out today to schedule a free consultation and discuss your goals.</p>
@@ -263,7 +237,7 @@ export default function Home() {
     <p className="mt-4 text-gray-500 text-sm">Or call us directly at <strong>+91 91777 54434</strong></p>
   </section>
 
-  {/* Footer */}
+       {/* Footer */}
   <footer className="py-6 text-center text-sm text-gray-700">
     &copy; {new Date().getFullYear()} Vikrin.com. All rights reserved.
   </footer>
