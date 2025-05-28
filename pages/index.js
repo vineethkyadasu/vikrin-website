@@ -23,22 +23,62 @@ export default function Home() {
 
       <main className="min-h-screen bg-white text-gray-900">
         {/* Hero Section */}
-        <section className="text-center py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            Digital Powerhouse for Websites & Marketing
-          </h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-300">
-            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-              Let&apos;s Talk
-            </a>
-            <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-              See Our Work
-            </a>
-          </div>
-        </section>
+<section className="py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+    {/* Left Side */}
+    <div className="bg-white/10 p-10 rounded-2xl md:w-1/2 w-full">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+        Digital Powerhouse for Websites & Marketing
+      </h1>
+      <p className="text-lg md:text-xl text-gray-300 mb-8">
+        Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
+      </p>
+      <div className="flex space-x-4">
+        <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
+          Let&apos;s Talk
+        </a>
+        <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+          See Our Work
+        </a>
+      </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="text-center md:w-1/2 w-full flex flex-col items-center justify-center relative h-56 md:h-64">
+      <motion.div
+        className="absolute text-xl md:text-2xl font-semibold text-white"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: -50, opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 1.5,
+          ease: "easeInOut",
+        }}
+      >
+        <motion.div
+          key="services"
+          animate={{
+            y: [0, -40, 0],
+            opacity: [1, 0, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
+          }}
+        >
+          {["E-Commerce", "Custom Websites", "SEO & Marketing", "Landing Pages", "Lead Generation", "Social Media Campaigns"]
+            .map((service, i) => (
+              <motion.div key={i} className="mb-2">{service}</motion.div>
+            ))}
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
         {/* Services Section */}
         <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
