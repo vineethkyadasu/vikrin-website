@@ -31,7 +31,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-4">
             <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-              Let&apos;s Talk
+              Let's Talk
             </a>
             <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
               See Our Work
@@ -40,112 +40,110 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-<section id="services" className="py-24 px-6 max-w-6xl mx-auto">
-  <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
+        <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
 
-  <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-    {["E-Commerce", "Business Websites", "Custom Platforms"].map((title, index) => (
-      <motion.div
-        key={title}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: index * 0.15 }}
-        className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
-      >
-        <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
-        <p className="text-gray-600">{`High-performance ${title.toLowerCase()} built with modern frameworks and UX best practices.`}</p>
-      </motion.div>
-    ))}
-  </div>
+          <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {["E-Commerce", "Business Websites", "Custom Platforms"].map((title, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.15 }}
+                className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
+              >
+                <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+                <p className="text-gray-600">{`High-performance ${title.toLowerCase()} built with modern frameworks and UX best practices.`}</p>
+              </motion.div>
+            ))}
+          </div>
 
-  <h3 className="text-2xl font-semibold mb-6 text-blue-700">Digital Marketing</h3>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {["SEO Optimization", "Social Media Management", "Performance Ads"].map((title, index) => (
-      <motion.div
-        key={title}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: index * 0.15 }}
-        className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
-      >
-        <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
-        <p className="text-gray-600">{`Boost visibility and traffic with expert-level ${title.toLowerCase()}.`}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
+          <h3 className="text-2xl font-semibold mb-6 text-blue-700">Digital Marketing</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {["SEO Optimization", "Social Media Management", "Performance Ads"].map((title, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.15 }}
+                className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
+              >
+                <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+                <p className="text-gray-600">{`Boost visibility and traffic with expert-level ${title.toLowerCase()}.`}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
         {/* Portfolio Section */}
-<section id="portfolio" className="py-20 bg-white px-6 max-w-6xl mx-auto">
-  <h2 className="text-4xl font-bold text-center mb-14">Portfolio Highlights</h2>
+        <section id="portfolio" className="py-20 bg-white px-6 max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-14">Portfolio Highlights</h2>
 
-  {/* Web Development Projects */}
-  <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Web Development</h3>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-    {[
-      "E-Commerce Fashion Store",
-      "Online Learning Portal",
-      "Real Estate Listing Site",
-      "Health Clinic Booking",
-      "Personal Brand Portfolio",
-      "Consulting Firm Site",
-    ].map((title, index) => {
-      const imageName = title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '');
-      return (
-        <motion.div
-          key={title}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
-        >
-          <div className="overflow-hidden rounded-xl mb-4">
-            <img
-              src={`/projects/${imageName}.jpg`}
-              alt={title}
-              className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
-            />
+          <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Web Development</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+            {[
+              "E-Commerce Fashion Store",
+              "Online Learning Portal",
+              "Real Estate Listing Site",
+              "Health Clinic Booking",
+              "Personal Brand Portfolio",
+              "Consulting Firm Site",
+            ].map((title, index) => {
+              const imageName = title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '');
+              return (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
+                >
+                  <div className="overflow-hidden rounded-xl mb-4">
+                    <img
+                      src={`/projects/${imageName}.jpg`}
+                      alt={title}
+                      className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
+                    />
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
+                  <p className="text-gray-600 text-sm">Custom-built, responsive designs made to perform and impress.</p>
+                </motion.div>
+              );
+            })}
           </div>
-          <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
-          <p className="text-gray-600 text-sm">Custom-built, responsive designs made to perform and impress.</p>
-        </motion.div>
-      );
-    })}
-  </div>
 
-  {/* Digital Marketing Projects */}
-  <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Digital Marketing</h3>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-    {[
-      { title: "SEO Growth Campaign", image: "seo-campaign", desc: "Ranked local businesses on Page 1 in just 3 months." },
-      { title: "Social Media Blitz", image: "social-media", desc: "Doubled engagement through custom campaigns and reels." },
-      { title: "Lead Gen Landing Page", image: "lead-gen", desc: "Built and promoted landing page with 12% conversion rate." },
-    ].map(({ title, image, desc }, index) => (
-      <motion.div
-        key={title}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
-      >
-        <div className="overflow-hidden rounded-xl mb-4">
-          <img
-            src={`/projects/${image}.jpg`}
-            alt={title}
-            className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
-          />
-        </div>
-        <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
-        <p className="text-gray-600 text-sm">{desc}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
+          <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Digital Marketing</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              { title: "SEO Growth Campaign", image: "seo-campaign", desc: "Ranked local businesses on Page 1 in just 3 months." },
+              { title: "Social Media Blitz", image: "social-media", desc: "Doubled engagement through custom campaigns and reels." },
+              { title: "Lead Gen Landing Page", image: "lead-gen", desc: "Built and promoted landing page with 12% conversion rate." },
+            ].map(({ title, image, desc }, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
+              >
+                <div className="overflow-hidden rounded-xl mb-4">
+                  <img
+                    src={`/projects/${image}.jpg`}
+                    alt={title}
+                    className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
+                <p className="text-gray-600 text-sm">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
         {/* Why Choose Us */}
         <section id="why-us" className="py-20 bg-gray-100 px-6">
