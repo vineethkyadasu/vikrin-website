@@ -26,7 +26,7 @@ function HeroSection() {
 
   return (
     <section className="py-24 px-6 bg-[#e5e5e5] text-gray-900">
-      <div className="max-w-7xl mx-auto bg-[#042927] rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto bg-[#042927] bg-grid rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
         <div className="md:w-1/2 text-white space-y-6">
           <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
             Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
