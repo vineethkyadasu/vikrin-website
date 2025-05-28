@@ -37,7 +37,7 @@ export default function Home() {
   <div className="max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0">
     
     {/* Left Content */}
-    <div className="md:w-1/2">
+    <div className="md:w-1/2 text-left">
       <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
         Digital Powerhouse for Websites & Marketing
       </h1>
@@ -54,16 +54,18 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Right Animated Services */}
-    <div className="md:w-1/2 flex justify-center text-center">
-      <AnimatedServiceText services={[
-        "E-Commerce Development",
-        "Custom Business Websites",
-        "SEO & Performance Marketing",
-        "Landing Pages",
-        "Lead Generation Funnels",
-        "Social Media Campaigns"
-      ]} />
+    {/* Right Carousel Services */}
+    <div className="md:w-1/2 flex justify-center">
+      <AnimatedServiceCarousel
+        items={[
+          "E-Commerce Development",
+          "Custom Business Websites",
+          "SEO & Performance Marketing",
+          "Landing Pages",
+          "Lead Generation Funnels",
+          "Social Media Campaigns"
+        ]}
+      />
     </div>
   </div>
 </section>
@@ -222,35 +224,37 @@ export default function Home() {
 }
 
 
-function AnimatedServiceText({ services }) {
+function AnimatedServiceCarousel({ items }) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % services.length);
+      setIndex((prev) => (prev + 1) % items.length);
     }, 2500);
     return () => clearInterval(timer);
-  }, [services.length]);
+  }, [items.length]);
 
-  const getRelativeIndex = (offset) => (index + offset + services.length) % services.length;
+  const getItem = (offset) => items[(index + offset + items.length) % items.length];
 
   return (
     <div className="relative h-48 w-full flex flex-col items-center justify-center overflow-hidden">
-      {[ -2, -1, 0, 1, 2 ].map(offset => {
-        const relIndex = getRelativeIndex(offset);
-        const isActive = offset === 0;
+      {[2, 1, 0, -1, -2].map((offset) => {
+        const value = getItem(offset);
+        const key = `${index}-${offset}`;
+        const isMain = offset === 0;
+
         return (
           <motion.div
-            key={relIndex}
-            initial={{ opacity: 0, y: offset * 30 }}
-            animate={{ opacity: 1, y: offset * 30 }}
-            exit={{ opacity: 0, y: offset * 30 }}
+            key={key}
+            initial={{ opacity: 0, scale: 0.8, y: offset * 30 }}
+            animate={{ opacity: isMain ? 1 : 0.4, scale: isMain ? 1.2 : 0.9, y: offset * 30 }}
+            exit={{ opacity: 0, scale: 0.8, y: offset * 30 }}
             transition={{ duration: 0.6 }}
-            className={`absolute text-center text-white text-lg md:text-2xl transition-opacity duration-500 ${
-              isActive ? 'font-bold scale-110' : 'opacity-40 text-sm'
+            className={`absolute text-center text-white ${
+              isMain ? 'text-2xl md:text-3xl font-bold' : 'text-base md:text-lg'
             }`}
           >
-            {services[relIndex]}
+            {value}
           </motion.div>
         );
       })}
