@@ -185,7 +185,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-white px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Let’s Build Something Great</h2>
+          <h2 className="text-4xl font-bold mb-6">Let&apos;s Build Something Great</h2>
           <p className="text-xl mb-10 text-gray-700">Reach out today to schedule a free consultation and discuss your goals.</p>
           <a href="mailto:hello@vikrin.com" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700">
             Contact Us
