@@ -214,6 +214,7 @@ export default function Home() {
   );
 }
 
+
 function AnimatedServiceText({ services }) {
   const [index, setIndex] = useState(0);
 
@@ -222,22 +223,39 @@ function AnimatedServiceText({ services }) {
       setIndex(prev => (prev + 1) % services.length);
     }, 2500);
     return () => clearInterval(timer);
-  }, []);
+  }, [services.length]);
+
+  const getItem = (offset) => {
+    const newIndex = (index + offset + services.length) % services.length;
+    return services[newIndex];
+  };
 
   return (
-    <div className="h-16 flex items-center justify-center text-xl md:text-2xl font-semibold text-white relative overflow-hidden w-full">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={services[index]}
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -30, opacity: 0 }}
-          transition={{ duration: 0.6 }}
-          className="absolute"
-        >
-          {services[index]}
-        </motion.div>
-      </AnimatePresence>
+    <div className="h-40 w-full overflow-hidden flex flex-col items-center justify-center relative">
+      {[...Array(5)].map((_, i) => {
+        const offset = i - 2; // -2 to +2
+        const item = getItem(offset);
+        const isCenter = offset === 0;
+
+        return (
+          <motion.div
+            key={item + offset}
+            initial={{ opacity: 0, y: 10 * offset }}
+            animate={{
+              opacity: isCenter ? 1 : 0.4,
+              y: (offset - 2) * 30,
+              scale: isCenter ? 1.1 : 0.9,
+            }}
+            transition={{ duration: 0.5 }}
+            className={`absolute text-xl md:text-2xl font-semibold ${
+              isCenter ? "text-white" : "text-gray-400"
+            }`}
+            style={{ top: "50%", transform: "translateY(-50%)" }}
+          >
+            {item}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
