@@ -33,51 +33,88 @@ export default function Home() {
 
       <main className="min-h-screen bg-white text-gray-900">
         {/* Hero Section */}
-<section className="relative z-10 py-28 md:py-32 bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-hidden">
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
-      
-      {/* Left */}
-      <div className="md:w-1/2 text-left">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-white drop-shadow-md">
-          Digital Powerhouse for <br className="hidden md:block" /> Websites & Marketing
-        </h1>
-        <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-lg leading-relaxed">
-          Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="#contact"
-            className="bg-white text-black px-6 py-3 rounded-xl font-semibold shadow hover:bg-slate-100 transition"
-          >
-            Let’s Talk
-          </a>
-          <a
-            href="#portfolio"
-            className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
-          >
-            See Our Work
-          </a>
-        </div>
-      </div>
+const services = [
+  'E-Commerce Development',
+  'Business Websites',
+  'Custom Platforms',
+  'SEO & Ads',
+  'Lead Funnels',
+  'Social Campaigns'
+];
 
-      {/* Right Carousel */}
-      <div className="md:w-1/2 flex justify-center relative">
-        <div className="w-full max-w-md">
-          <AnimatedServiceCarousel
-            items={[
-              "E-Commerce Development",
-              "Custom Business Websites",
-              "SEO & Performance Marketing",
-              "Landing Pages",
-              "Lead Generation Funnels",
-              "Social Media Campaigns"
-            ]}
-          />
+export default function HeroSection() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % services.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getServiceAt = (offset) => {
+    const i = (index + offset + services.length) % services.length;
+    return services[i];
+  };
+
+  return (
+    <section className="py-24 px-6 bg-[#012322] text-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-white/5 backdrop-blur-xl rounded-3xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-center gap-10 border border-white/10 shadow-lg">
+
+        {/* Left */}
+        <div className="md:w-1/2 space-y-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Digital Powerhouse for <br className="hidden md:block" /> Websites & Marketing
+          </h1>
+          <p className="text-lg md:text-xl text-white/80">
+            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
+          </p>
+          <div className="flex space-x-4 pt-4">
+            <a
+              href="#contact"
+              className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold"
+            >
+              Let’s Talk
+            </a>
+            <a
+              href="#portfolio"
+              className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black"
+            >
+              See Our Work
+            </a>
+          </div>
+        </div>
+
+        {/* Right Swipe Service Cards */}
+        <div className="md:w-1/2 h-60 relative flex flex-col items-center justify-center">
+          {[2, 1, 0, -1, -2].map((offset) => {
+            const text = getServiceAt(offset);
+            const scale = offset === 0 ? 1 : 0.85;
+            const opacity = offset === 0 ? 1 : 0.4;
+            const translateY = offset * 50;
+            const zIndex = 5 - Math.abs(offset);
+            return (
+              <motion.div
+                key={text}
+                className="absolute w-64 px-6 py-3 rounded-xl text-center border border-white/20 bg-white/10 backdrop-blur text-white font-semibold"
+                style={{
+                  transform: `translateY(${translateY}px) scale(${scale})`,
+                  opacity,
+                  zIndex
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity }}
+                transition={{ duration: 0.4 }}
+              >
+                {text}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  );
+}
 
   {/* Background Lighting Effect */}
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 opacity-20 blur-[160px] rounded-full z-0" />
