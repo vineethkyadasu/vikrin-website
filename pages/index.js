@@ -70,6 +70,9 @@ export default function Home() {
         </nav>
       </header>
 
+      {/* ✅ Begin main content wrapper */}
+      <main>
+      
       {/* Hero Section */}
       <section className="py-24 px-6 bg-[#012322] text-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto bg-white/5 backdrop-blur-xl rounded-3xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-center gap-10 border border-white/10 shadow-lg">
