@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const services = [
-  "E-Commerce Development",
-  "Custom Business Websites",
-  "SEO & Performance Marketing",
-  "Landing Pages",
-  "Lead Generation Funnels",
-  "Social Media Campaigns",
+  'E-Commerce Development',
+  'Business Websites',
+  'Custom Platforms',
+  'SEO & Ads',
+  'Lead Funnels',
+  'Social Campaigns'
 ];
 
 export default function Home() {
@@ -33,15 +33,6 @@ export default function Home() {
 
       <main className="min-h-screen bg-white text-gray-900">
         {/* Hero Section */}
-const services = [
-  'E-Commerce Development',
-  'Business Websites',
-  'Custom Platforms',
-  'SEO & Ads',
-  'Lead Funnels',
-  'Social Campaigns'
-];
-
 export default function HeroSection() {
   const [index, setIndex] = useState(0);
 
