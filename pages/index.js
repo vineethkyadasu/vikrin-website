@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Code, Layout, TrendingUp, Smartphone, Zap, Users } from 'lucide-react';
 
@@ -8,7 +9,7 @@ export default function Home() {
       {/* Navigation Bar */}
       <header className="flex items-center justify-between px-8 py-5 bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
-          <img src="/logo.png" alt="Vikrin Logo" className="h-10 w-auto" />
+          <Image src="/logo.png" alt="Vikrin Logo" width={40} height={40} />
           <span className="text-2xl font-bold text-gray-900">Vikrin</span>
         </div>
         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
@@ -31,7 +32,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-4">
             <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-              Let's Talk
+              Let&apos;s Talk
             </a>
             <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
               See Our Work
@@ -55,7 +56,7 @@ export default function Home() {
                 className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
               >
                 <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
-                <p className="text-gray-600">{`High-performance ${title.toLowerCase()} built with modern frameworks and UX best practices.`}</p>
+                <p className="text-gray-600">High-performance {title.toLowerCase()} built with modern frameworks and UX best practices.</p>
               </motion.div>
             ))}
           </div>
@@ -72,7 +73,7 @@ export default function Home() {
                 className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
               >
                 <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
-                <p className="text-gray-600">{`Boost visibility and traffic with expert-level ${title.toLowerCase()}.`}</p>
+                <p className="text-gray-600">Boost visibility and traffic with expert-level {title.toLowerCase()}.</p>
               </motion.div>
             ))}
           </div>
@@ -84,45 +85,33 @@ export default function Home() {
 
           <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Web Development</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-            {[
-              "E-Commerce Fashion Store",
-              "Online Learning Portal",
-              "Real Estate Listing Site",
-              "Health Clinic Booking",
-              "Personal Brand Portfolio",
-              "Consulting Firm Site",
-            ].map((title, index) => {
-              const imageName = title.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '');
-              return (
-                <motion.div
-                  key={title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
-                >
-                  <div className="overflow-hidden rounded-xl mb-4">
-                    <img
-                      src={`/projects/${imageName}.jpg`}
-                      alt={title}
-                      className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
-                    />
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-1">{title}</h4>
-                  <p className="text-gray-600 text-sm">Custom-built, responsive designs made to perform and impress.</p>
-                </motion.div>
-              );
-            })}
+            {["ecommerce-fashion-store", "online-learning-portal", "real-estate-listing-site", "health-clinic-booking", "personal-brand-portfolio", "consulting-firm-site"].map((img, index) => (
+              <motion.div
+                key={img}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
+              >
+                <div className="overflow-hidden rounded-xl mb-4">
+                  <Image
+                    src={`/projects/${img}.jpg`}
+                    alt={img}
+                    width={500}
+                    height={300}
+                    className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-1 capitalize">{img.replace(/-/g, ' ')}</h4>
+                <p className="text-gray-600 text-sm">Custom-built, responsive designs made to perform and impress.</p>
+              </motion.div>
+            ))}
           </div>
 
           <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Digital Marketing</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              { title: "SEO Growth Campaign", image: "seo-campaign", desc: "Ranked local businesses on Page 1 in just 3 months." },
-              { title: "Social Media Blitz", image: "social-media", desc: "Doubled engagement through custom campaigns and reels." },
-              { title: "Lead Gen Landing Page", image: "lead-gen", desc: "Built and promoted landing page with 12% conversion rate." },
-            ].map(({ title, image, desc }, index) => (
+            {[{ title: "SEO Growth Campaign", image: "seo-campaign", desc: "Ranked local businesses on Page 1 in just 3 months." }, { title: "Social Media Blitz", image: "social-media", desc: "Doubled engagement through custom campaigns and reels." }, { title: "Lead Gen Landing Page", image: "lead-gen", desc: "Built and promoted landing page with 12% conversion rate." }].map(({ title, image, desc }, index) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 50 }}
@@ -132,9 +121,11 @@ export default function Home() {
                 className="group bg-gray-50 border rounded-2xl p-4 shadow hover:shadow-xl transition"
               >
                 <div className="overflow-hidden rounded-xl mb-4">
-                  <img
+                  <Image
                     src={`/projects/${image}.jpg`}
                     alt={title}
+                    width={500}
+                    height={300}
                     className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition duration-300 ease-in-out"
                   />
                 </div>
