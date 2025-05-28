@@ -33,41 +33,54 @@ export default function Home() {
 
       <main className="min-h-screen bg-white text-gray-900">
         {/* Hero Section */}
-<section className="py-24 px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-  <div className="max-w-6xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0">
-    
-    {/* Left Content */}
-    <div className="md:w-1/2 text-left">
-      <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-        Digital Powerhouse for Websites & Marketing
-      </h1>
-      <p className="text-lg md:text-xl text-gray-300 mb-8">
-        Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
-      </p>
-      <div className="flex space-x-4">
-        <a href="#contact" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200">
-          Let&apos;s Talk
-        </a>
-        <a href="#portfolio" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-          See Our Work
-        </a>
+<section className="relative z-10 py-28 md:py-32 bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-hidden">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
+      
+      {/* Left */}
+      <div className="md:w-1/2 text-left">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-white drop-shadow-md">
+          Digital Powerhouse for <br className="hidden md:block" /> Websites & Marketing
+        </h1>
+        <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-lg leading-relaxed">
+          Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="#contact"
+            className="bg-white text-black px-6 py-3 rounded-xl font-semibold shadow hover:bg-slate-100 transition"
+          >
+            Let’s Talk
+          </a>
+          <a
+            href="#portfolio"
+            className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
+          >
+            See Our Work
+          </a>
+        </div>
+      </div>
+
+      {/* Right Carousel */}
+      <div className="md:w-1/2 flex justify-center relative">
+        <div className="w-full max-w-md">
+          <AnimatedServiceCarousel
+            items={[
+              "E-Commerce Development",
+              "Custom Business Websites",
+              "SEO & Performance Marketing",
+              "Landing Pages",
+              "Lead Generation Funnels",
+              "Social Media Campaigns"
+            ]}
+          />
+        </div>
       </div>
     </div>
-
-    {/* Right Carousel Services */}
-    <div className="md:w-1/2 flex justify-center">
-      <AnimatedServiceCarousel
-        items={[
-          "E-Commerce Development",
-          "Custom Business Websites",
-          "SEO & Performance Marketing",
-          "Landing Pages",
-          "Lead Generation Funnels",
-          "Social Media Campaigns"
-        ]}
-      />
-    </div>
   </div>
+
+  {/* Background Lighting Effect */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 opacity-20 blur-[160px] rounded-full z-0" />
 </section>
 
         {/* Services Section */}
@@ -237,7 +250,7 @@ function AnimatedServiceCarousel({ items }) {
   const getItem = (offset) => items[(index + offset + items.length) % items.length];
 
   return (
-    <div className="relative h-48 w-full flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative h-48 flex items-center justify-center overflow-hidden">
       {[2, 1, 0, -1, -2].map((offset) => {
         const value = getItem(offset);
         const key = `${index}-${offset}`;
@@ -247,11 +260,11 @@ function AnimatedServiceCarousel({ items }) {
           <motion.div
             key={key}
             initial={{ opacity: 0, scale: 0.8, y: offset * 30 }}
-            animate={{ opacity: isMain ? 1 : 0.4, scale: isMain ? 1.2 : 0.9, y: offset * 30 }}
+            animate={{ opacity: isMain ? 1 : 0.3, scale: isMain ? 1.15 : 0.9, y: offset * 30 }}
             exit={{ opacity: 0, scale: 0.8, y: offset * 30 }}
             transition={{ duration: 0.6 }}
-            className={`absolute text-center text-white ${
-              isMain ? 'text-2xl md:text-3xl font-bold' : 'text-base md:text-lg'
+            className={`absolute text-center ${
+              isMain ? 'text-2xl md:text-3xl font-bold text-white' : 'text-sm md:text-base text-slate-300'
             }`}
           >
             {value}
