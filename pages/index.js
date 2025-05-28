@@ -27,7 +27,7 @@ function AnimatedServiceCarousel({ items }) {
   const getItem = (offset) => items[(index + offset + items.length) % items.length];
 
   return (
-    <div className="relative h-48 flex items-center justify-center overflow-hidden">
+    <div className="relative h-64 flex items-center justify-center overflow-hidden">
       {[2, 1, 0, -1, -2].map((offset) => {
         const value = getItem(offset);
         const key = `${index}-${offset}`;
@@ -40,8 +40,8 @@ function AnimatedServiceCarousel({ items }) {
             animate={{ opacity: isMain ? 1 : 0.3, scale: isMain ? 1.15 : 0.9, y: offset * 30 }}
             exit={{ opacity: 0, scale: 0.8, y: offset * 30 }}
             transition={{ duration: 0.6 }}
-            className={`absolute text-center ${
-              isMain ? 'text-2xl md:text-3xl font-bold text-white' : 'text-sm md:text-base text-slate-300'
+            className={`absolute text-center w-64 px-6 py-4 rounded-xl border border-white/20 bg-white/10 text-white font-semibold shadow-lg backdrop-blur-md ${
+              isMain ? 'text-2xl md:text-3xl' : 'text-sm md:text-base text-slate-300'
             }`}
           >
             {value}
@@ -52,10 +52,41 @@ function AnimatedServiceCarousel({ items }) {
   );
 }
 
+function HeroSection() {
+  return (
+    <section className="py-24 px-6 bg-white text-gray-900">
+      <div className="max-w-7xl mx-auto bg-[#042927] rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+
+        {/* Left Content */}
+        <div className="md:w-1/2 text-white space-y-6">
+          <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
+            Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
+          </h1>
+          <p className="text-lg md:text-xl text-white/80">
+            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
+          </p>
+          <div className="pt-4 space-x-4">
+            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
+              Let’s Talk
+            </a>
+            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+              See Our Work
+            </a>
+          </div>
+        </div>
+
+        {/* Right Content */}
+        <div className="md:w-1/2">
+          <AnimatedServiceCarousel items={services} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
-      {/* Navigation Bar */}
       <header className="flex items-center justify-between px-8 py-5 bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
           <Image src="/logo.png" alt="Vikrin Logo" width={40} height={40} />
@@ -70,34 +101,75 @@ export default function Home() {
         </nav>
       </header>
 
+
       {/* ✅ Begin main content wrapper */}
       <main>
-      
+
       {/* Hero Section */}
-      <section className="py-24 px-6 bg-white text-white relative overflow-hidden">
-        <div className="max-w-6xl mx-auto bg-[#012322] backdrop-blur-xl rounded-3xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-center gap-10 border border-white/10 shadow-lg">
-          <div className="md:w-1/2 space-y-6">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              Digital Powerhouse for <br className="hidden md:block" /> Websites & Marketing
-            </h1>
-            <p className="text-lg md:text-xl text-white/80">
-              Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
-            </p>
-            <div className="flex space-x-4 pt-4">
-              <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
-                Let’s Talk
-              </a>
-              <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
-                See Our Work
-              </a>
-            </div>
-          </div>
-          <div className="md:w-1/2">
-            <AnimatedServiceCarousel items={services} />
+      export default function HeroSection() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % services.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="py-24 px-6 bg-white text-gray-900">
+      <div className="max-w-7xl mx-auto bg-[#042927] rounded-3xl px-8 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
+
+        {/* Left Content */}
+        <div className="md:w-1/2 text-white space-y-6">
+          <h1 className="text-[42px] md:text-[52px] font-extrabold leading-tight">
+            Digital Powerhouse <br className="hidden md:block" /> for Websites & Marketing
+          </h1>
+          <p className="text-lg md:text-xl text-white/80">
+            Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
+          </p>
+          <div className="pt-4 space-x-4">
+            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">
+              Let’s Talk
+            </a>
+            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">
+              See Our Work
+            </a>
           </div>
         </div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 opacity-20 blur-[160px] rounded-full z-0" />
-      </section>
+
+        {/* Right Animated Cards */}
+        <div className="md:w-1/2 flex items-center justify-center relative h-64">
+          {[2, 1, 0, -1, -2].map((offset) => {
+            const i = (offset + services.length + index) % services.length;
+            const text = services[i];
+            const isMain = offset === 0;
+            const scale = isMain ? 1 : 0.85;
+            const opacity = isMain ? 1 : 0.3;
+            const translateY = offset * 50;
+            const z = 5 - Math.abs(offset);
+            return (
+              <motion.div
+                key={`${i}-${offset}`}
+                className="absolute w-64 px-6 py-4 rounded-xl text-center border border-white/20 backdrop-blur-md bg-white/10 text-white font-semibold shadow-lg"
+                style={{
+                  transform: `translateY(${translateY}px) scale(${scale})`,
+                  opacity,
+                  zIndex: z,
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity }}
+                transition={{ duration: 0.5 }}
+              >
+                {text}
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
         {/* Services Section */}
         <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
