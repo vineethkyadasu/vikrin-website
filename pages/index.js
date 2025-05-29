@@ -150,7 +150,9 @@ export default function Home() {
 
         {/* Portfolio Section */}
   <section id="portfolio" className="py-20 px-6 max-w-6xl mx-auto">
-    <h2 className="text-4xl font-bold text-center mb-14">Portfolio Highlights</h2>
+  <h2 className="text-4xl font-bold text-center mb-14 text-[#1F3CAB]">
+    Portfolio Highlights
+  </h2>
 
     <h3 className="text-2xl font-semibold text-left text-blue-700 mb-6">Web Development</h3>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
@@ -207,8 +209,10 @@ export default function Home() {
 
         {/* Why Choose Us */}
   <section id="why-us" className="py-20 px-6">
-    <div className="max-w-6xl mx-auto text-center">
-      <h2 className="text-4xl font-bold mb-12">Why Choose Vikrin?</h2>
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-4xl font-bold mb-12 text-[#1F3CAB]">
+      Why Choose Vikrin?
+    </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
         {[
           { icon: <Code className="text-blue-600 w-8 h-8 mb-3" />, title: "Enterprise-Ready Code", desc: "Built for scale, security, and flexibility with industry-standard frameworks." },
@@ -231,7 +235,7 @@ export default function Home() {
         {/* Testimonials */}
   <section id="testimonials" className="py-20 px-6">
     <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-4xl font-bold mb-12">What Our Clients Say</h2>
+      <h2 className="text-4xl font-bold mb-12 text-[#1F3CAB]">What Our Clients Say</h2>
       <div className="grid md:grid-cols-2 gap-8 text-left">
         {["Vikrin transformed our online presence!", "Their SEO helped us double our leads.", "Beautiful, fast websites and great team.", "We love their ongoing support."].map((quote, index) => (
           <div key={index} className="p-6 bg-white border rounded-xl shadow">
@@ -245,7 +249,7 @@ export default function Home() {
 
         {/* Contact Section */}
   <section id="contact" className="py-24 px-6 text-center">
-    <h2 className="text-4xl font-bold mb-6">Let&apos;s Build Something Great</h2>
+    <h2 className="text-4xl font-bold mb-6 text-[#1F3CAB]">Let&apos;s Build Something Great</h2>
     <p className="text-xl mb-10 text-gray-700">Reach out today to schedule a free consultation and discuss your goals.</p>
     <a href="mailto:hello@vikrin.com" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700">
       Contact Us
