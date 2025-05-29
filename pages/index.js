@@ -35,10 +35,20 @@ function HeroSection() {
           <p className="text-lg md:text-xl text-white/80">
             Vikrin builds stunning websites and drives growth with cutting-edge digital marketing.
           </p>
-          <div className="pt-4 space-x-4">
-            <a href="#contact" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">Let’s Talk</a>
-            <a href="#portfolio" className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black">See Our Work</a>
-          </div>
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+  <a
+    href="#contact"
+    className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold text-center"
+  >
+    Let’s Talk
+  </a>
+  <a
+    href="#portfolio"
+    className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black text-center"
+  >
+    See Our Work
+  </a>
+</div>
         </div>
 
         {/* RIGHT SIDE */}
