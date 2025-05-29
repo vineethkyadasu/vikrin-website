@@ -77,7 +77,7 @@ export default function Home() {
     <>
       <header className="flex items-center justify-between px-8 py-5 bg-[#e5e5e5] shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
-          <Link href="#top" scroll={true}>
+          <Link href="/" scroll={true}>
             <Image
               src="/logo.png"
               alt="Vikrin Logo"
