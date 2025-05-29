@@ -106,7 +106,7 @@ export default function Home() {
         {/* Services Section */}
 <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
   <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-[#1F3CAB]">
-    Our <span className="text-[#2563eb]">Services</span>
+    Our <span className="text-[#1F3CAB]">Services</span>
   </h2>
 
   <h3 className="text-2xl font-semibold mb-6 text-[#1F3CAB] tracking-tight">Web Development</h3>
