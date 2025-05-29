@@ -105,9 +105,11 @@ export default function Home() {
 
         {/* Services Section */}
         <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
-    <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
+    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-blue-900">
+      Our <span className="text-green-500">Services</span>
+    </h2>
 
-    <h3 className="text-2xl font-semibold mb-6 text-blue-700">Web Development</h3>
+    <h3 className="text-2xl font-bold mb-6 text-green-600 tracking-tight">Web Development</h3>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       {["E-Commerce", "Business Websites", "Custom Platforms"].map((title, index) => (
         <motion.div
@@ -124,7 +126,7 @@ export default function Home() {
       ))}
     </div>
 
-    <h3 className="text-2xl font-semibold mb-6 text-blue-700">Digital Marketing</h3>
+    <h3 className="text-2xl font-bold mb-6 text-green-600 tracking-tight">Digital Marketing</h3>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {["SEO Optimization", "Social Media Management", "Performance Ads"].map((title, index) => (
         <motion.div
@@ -135,7 +137,7 @@ export default function Home() {
           transition={{ duration: 0.4, delay: index * 0.15 }}
           className="p-6 border rounded-xl shadow-md bg-white hover:shadow-lg transition"
         >
-          <h4 className="text-xl font-semibold mb-2 text-blue-600">{title}</h4>
+          <h4 className="text-lg font-semibold mb-2 text-blue-700">{title}</h4>
           <p className="text-gray-600">Boost visibility and traffic with expert-level {title.toLowerCase()}.</p>
         </motion.div>
       ))}
