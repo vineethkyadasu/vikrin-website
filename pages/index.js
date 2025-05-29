@@ -105,11 +105,11 @@ export default function Home() {
 
         {/* Services Section */}
 <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
-  <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-[#1e3a8a]">
+  <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-[#1F3CAB]">
     Our <span className="text-[#2563eb]">Services</span>
   </h2>
 
-  <h3 className="text-2xl font-semibold mb-6 text-[#2563eb] tracking-tight">Web Development</h3>
+  <h3 className="text-2xl font-semibold mb-6 text-[#1F3CAB] tracking-tight">Web Development</h3>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
     {["E-Commerce", "Business Websites", "Custom Platforms"].map((title, index) => (
       <motion.div
@@ -128,7 +128,7 @@ export default function Home() {
     ))}
   </div>
 
-  <h3 className="text-2xl font-semibold mb-6 text-[#2563eb] tracking-tight">Digital Marketing</h3>
+  <h3 className="text-2xl font-semibold mb-6 text-[#1F3CAB] tracking-tight">Digital Marketing</h3>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {["SEO Optimization", "Social Media Management", "Performance Ads"].map((title, index) => (
       <motion.div
