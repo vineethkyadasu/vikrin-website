@@ -73,6 +73,7 @@ function HeroSection() {
 
 // ✅ Main Home Component
 export default function Home() {
+  const [navOpen, setNavOpen] = useState(false);
   return (
     <>
       <header className="flex items-center justify-between px-8 py-5 bg-[#e5e5e5] shadow-md sticky top-0 z-50">
@@ -89,13 +90,19 @@ export default function Home() {
             />
           </Link>
         </div>
-        <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <Link href="#services" className="hover:text-blue-600">Services</Link>
-          <Link href="#portfolio" className="hover:text-blue-600">Portfolio</Link>
-          <Link href="#why-us" className="hover:text-blue-600">Why Us</Link>
-          <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
-          <Link href="#contact" className="hover:text-blue-600">Contact</Link>
-        </nav>
+        <div className="md:hidden">
+  <button onClick={() => setNavOpen(!navOpen)} className="text-gray-700 text-2xl">
+    ☰
+  </button>
+</div>
+
+<nav className={`${navOpen ? "flex" : "hidden"} flex-col absolute top-20 right-8 bg-white p-4 rounded-lg shadow-md space-y-4 md:flex md:flex-row md:static md:bg-transparent md:space-y-0 md:space-x-6 text-gray-700 font-medium`}>
+  <Link href="#services" className="hover:text-blue-600">Services</Link>
+  <Link href="#portfolio" className="hover:text-blue-600">Portfolio</Link>
+  <Link href="#why-us" className="hover:text-blue-600">Why Us</Link>
+  <Link href="#testimonials" className="hover:text-blue-600">Testimonials</Link>
+  <Link href="#contact" className="hover:text-blue-600">Contact</Link>
+</nav>
       </header>
 
       <div id="top"></div>
@@ -251,7 +258,7 @@ export default function Home() {
   <section id="contact" className="py-24 px-6 text-center">
     <h2 className="text-4xl font-bold mb-6 text-[#1F3CAB]">Let&apos;s Build Something Great</h2>
     <p className="text-xl mb-10 text-gray-700">Reach out today to schedule a free consultation and discuss your goals.</p>
-    <a href="mailto:hello@vikrin.com" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700">
+    <a href="mailto:contact@vikrin.com" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700">
       Contact Us
     </a>
     <p className="mt-4 text-gray-500 text-sm">Or call us directly at <strong>+91 91777 54434</strong></p>
