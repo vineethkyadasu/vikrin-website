@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.vikrin.com
+
+# Sitemaps
+Sitemap: https://www.vikrin.com/sitemap.xml
