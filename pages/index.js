@@ -269,7 +269,7 @@ export default function Home() {
   <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
     <div>
       <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">{"Let's Build Something Great"}</h2>
-      <p className="text-lg text-gray-700">Reach out via your preferred channel. We'll get back within 24 hours.</p>
+      <p className="text-lg text-gray-700">{"Reach out via your preferred channel. We'll get back within 24 hours."}</p>
     </div>
 
     <div className="flex flex-col md:flex-row justify-center gap-6">
