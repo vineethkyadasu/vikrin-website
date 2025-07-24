@@ -268,7 +268,7 @@ export default function Home() {
         <section id="contact" className="py-24 px-6 bg-gradient-to-br from-[#f5f7fa] to-[#e4eaf2]">
   <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
     <div>
-      <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">Let's Build Something Great</h2>
+      <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">{"Let's Build Something Great"}</h2>
       <p className="text-lg text-gray-700">Reach out via your preferred channel. We'll get back within 24 hours.</p>
     </div>
 
