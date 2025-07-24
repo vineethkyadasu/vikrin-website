@@ -6,28 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Layout, TrendingUp, Smartphone, Zap, Users } from 'lucide-react';
 import Head from "next/head";
 
-<Head>
-  <title>Vikrin – Web & Digital Solutions Agency</title>
-  <meta name="description" content="Vikrin is a digital agency building high-performance websites, marketing strategies, and scalable solutions for your business." />
-
-  {/* Favicon */}
-  <link rel="icon" href="/favicon.ico" />
-
-  {/* Open Graph / Facebook */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vikrin.com" />
-  <meta property="og:title" content="Vikrin – Web & Digital Solutions Agency" />
-  <meta property="og:description" content="Build stunning websites, grow your digital presence, and scale your business with Vikrin." />
-  <meta property="og:image" content="https://vikrin.com/meta-image.png" />
-
-  {/* Twitter Card */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vikrin – Web & Digital Solutions Agency" />
-  <meta name="twitter:description" content="Vikrin helps businesses grow through modern websites, branding, and marketing." />
-  <meta name="twitter:image" content="https://vikrin.com/meta-image.png" />
-</Head>
-
-
 const services = [
   'E-Commerce Development',
   'Business Websites',
@@ -99,6 +77,16 @@ export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <>
+      <Head>
+        <title>Vikrin – Web Development & Digital Marketing Agency</title>
+        <meta name="description" content="Vikrin builds stunning websites and drives growth with cutting-edge digital marketing." />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Vikrin – Websites & Marketing" />
+        <meta property="og:description" content="Your trusted partner for digital solutions – from websites to marketing." />
+        <meta property="og:image" content="https://vikrin.com/meta-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
       <header className="flex items-center justify-between px-8 py-5 bg-[#e5e5e5] shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
           <Link href="/" scroll={true}>
