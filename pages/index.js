@@ -78,14 +78,25 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Vikrin – Web Development & Digital Marketing Agency</title>
-        <meta name="description" content="Vikrin builds stunning websites and drives growth with cutting-edge digital marketing." />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content="Vikrin – Websites & Marketing" />
-        <meta property="og:description" content="Your trusted partner for digital solutions – from websites to marketing." />
-        <meta property="og:image" content="https://vikrin.com/meta-image.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+  <title>Vikrin - Digital Powerhouse for Websites & Marketing</title>
+  <meta name="description" content="Vikrin builds stunning websites and drives growth with cutting-edge digital marketing. Let's talk and bring your vision to life." />
+  
+  {/* Open Graph (for Facebook, LinkedIn, etc.) */}
+  <meta property="og:title" content="Vikrin - Digital Powerhouse" />
+  <meta property="og:description" content="We build stunning websites & drive growth with digital marketing. Let’s talk." />
+  <meta property="og:image" content="/meta-image.png" />
+  <meta property="og:url" content="https://vikrin.com" />
+  <meta property="og:type" content="website" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vikrin - Digital Powerhouse" />
+  <meta name="twitter:description" content="We build stunning websites & drive growth with digital marketing." />
+  <meta name="twitter:image" content="/meta-image.png" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" />
+</Head>
 
       <header className="flex items-center justify-between px-8 py-5 bg-[#e5e5e5] shadow-md sticky top-0 z-50">
         <div className="flex items-center space-x-3">
