@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Layout, TrendingUp, Smartphone, Zap, Users } from 'lucide-react';
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 const services = [
   'E-Commerce Development',
@@ -261,64 +262,76 @@ export default function Home() {
   </section>
 
         {/* Testimonials */}
-  <section id="testimonials" className="py-20 px-6">
-    <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-4xl font-bold mb-12 text-[#1F3CAB]">What Our Clients Say</h2>
-      <div className="grid md:grid-cols-2 gap-8 text-left">
-        {["Vikrin transformed our online presence!", "Their SEO helped us double our leads.", "Beautiful, fast websites and great team.", "We love their ongoing support."].map((quote, index) => (
-          <div key={index} className="p-6 bg-white border rounded-xl shadow">
-            <p className="text-gray-700 italic">“{quote}”</p>
-            <p className="mt-4 font-semibold text-blue-600">— Happy Client</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-        <section id="contact" className="py-24 px-6 bg-gradient-to-br from-[#f5f7fa] to-[#e4eaf2]">
-  <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
-    <div>
-      <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">{"Let's Build Something Great"}</h2>
-      <p className="text-lg text-gray-700">{"Reach out via your preferred channel. We'll get back within 24 hours."}</p>
-    </div>
-
-    <div className="flex flex-col md:flex-row justify-center gap-6">
-      <a
-        href="mailto:contact@vikrin.com"
-        className="flex items-center justify-center gap-3 px-6 py-4 bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition transform text-blue-600 font-semibold text-lg"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M4 4h16v16H4z" fill="none" />
-          <path d="M4 4l8 8 8-8" stroke="currentColor" strokeWidth="2" />
-        </svg>
-        Email Us
-      </a>
-
-      <a
-  href="https://wa.me/919177754434"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center justify-center gap-3 px-6 py-4 bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition transform text-green-600 font-semibold text-lg"
->
-  <svg
-    className="w-6 h-6"
-    viewBox="0 0 32 32"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M16.003 2.667c-7.356 0-13.333 5.978-13.333 13.333 0 2.355.62 4.64 1.795 6.664L2.667 29.333l6.816-1.773a13.295 13.295 0 006.52 1.741c7.355 0 13.333-5.978 13.333-13.334s-5.978-13.333-13.333-13.333zm0 24a10.67 10.67 0 01-5.453-1.495l-.392-.236-4.04 1.052 1.077-3.935-.255-.403a10.664 10.664 0 01-1.636-5.612c0-5.893 4.78-10.667 10.666-10.667s10.667 4.774 10.667 10.667c0 5.885-4.774 10.667-10.667 10.667zm5.213-7.947c-.287-.144-1.7-.84-1.964-.934-.264-.095-.456-.143-.647.144-.191.287-.744.934-.911 1.127-.168.191-.336.215-.623.071-.287-.144-1.214-.447-2.314-1.425-.855-.761-1.43-1.7-1.597-1.987-.168-.287-.018-.443.127-.587.131-.131.287-.335.431-.503.144-.167.191-.287.287-.478.095-.191.048-.359-.024-.503-.071-.143-.647-1.562-.888-2.139-.232-.559-.471-.48-.647-.487l-.551-.012c-.191 0-.503.071-.767.335s-1.007.983-1.007 2.396 1.031 2.78 1.175 2.975c.143.191 2.03 3.1 4.923 4.345.688.297 1.224.474 1.642.605.69.22 1.318.19 1.813.115.553-.083 1.7-.696 1.942-1.367.24-.671.24-1.247.168-1.367-.072-.119-.264-.191-.551-.335z" />
-  </svg>
-  WhatsApp Us
-</a>
+<section id="testimonials" className="py-20 px-6">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-4xl font-bold mb-12 text-[#1F3CAB]">What Our Clients Say</h2>
+    <div className="grid md:grid-cols-2 gap-8 text-left">
+      {[
+        "Vikrin transformed our online presence!",
+        "Their SEO helped us double our leads.",
+        "Beautiful, fast websites and great team.",
+        "We love their ongoing support.",
+      ].map((quote, index) => (
+        <div key={index} className="p-6 bg-white border rounded-xl shadow">
+          <p className="text-gray-700 italic">“{quote}”</p>
+          <p className="mt-4 font-semibold text-blue-600">— Happy Client</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
 
-       {/* Footer */}
-  <footer className="py-6 text-center text-sm text-gray-700">
-    &copy; {new Date().getFullYear()} Vikrin.com. All rights reserved.
-  </footer>
-</main>
+      {/* Contact CTA Section */}
+<section id="contact" className="py-20 px-6">
+  <div className="max-w-5xl mx-auto">
+    <div className="bg-white rounded-2xl shadow p-10 md:p-14 text-center md:text-left">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">Let's Build Something Great</h2>
+          <p className="text-lg text-gray-700">
+            Reach out via your preferred channel. We'll get back within 24 hours.
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-center md:justify-start gap-6">
+          {/* Email Button */}
+          <a
+            href="mailto:contact@vikrin.com"
+            className="flex items-center justify-center gap-3 px-6 py-4 bg-white border rounded-2xl shadow hover:shadow-lg hover:scale-105 transition transform text-blue-600 font-semibold text-lg"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z" fill="none" />
+              <path d="M4 4l8 8 8-8" stroke="currentColor" strokeWidth="2" />
+            </svg>
+            Email Us
+          </a>
+
+          {/* WhatsApp Button */}
+          <a
+            href="https://wa.me/919177754434"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 px-6 py-4 bg-white border rounded-2xl shadow hover:shadow-lg hover:scale-105 transition transform text-green-600 font-semibold text-lg"
+          >
+            <svg
+              className="w-6 h-6"
+              viewBox="0 0 32 32"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M16.003 2.667c-7.356 0-13.333 5.978-13.333 13.333 0 2.355.62 4.64 1.795 6.664L2.667 29.333l6.816-1.773a13.295 13.295 0 006.52 1.741c7.355 0 13.333-5.978 13.333-13.334s-5.978-13.333-13.333-13.333zm0 24a10.67 10.67 0 01-5.453-1.495l-.392-.236-4.04 1.052 1.077-3.935-.255-.403a10.664 10.664 0 01-1.636-5.612c0-5.893 4.78-10.667 10.666-10.667s10.667 4.774 10.667 10.667c0 5.885-4.774 10.667-10.667 10.667zm5.213-7.947c-.287-.144-1.7-.84-1.964-.934-.264-.095-.456-.143-.647.144-.191.287-.744.934-.911 1.127-.168.191-.336.215-.623.071-.287-.144-1.214-.447-2.314-1.425-.855-.761-1.43-1.7-1.597-1.987-.168-.287-.018-.443.127-.587.131-.131.287-.335.431-.503.144-.167.191-.287.287-.478.095-.191.048-.359-.024-.503-.071-.143-.647-1.562-.888-2.139-.232-.559-.471-.48-.647-.487l-.551-.012c-.191 0-.503.071-.767.335s-1.007.983-1.007 2.396 1.031 2.78 1.175 2.975c.143.191 2.03 3.1 4.923 4.345.688.297 1.224.474 1.642.605.69.22 1.318.19 1.813.115.553-.083 1.7-.696 1.942-1.367.24-.671.24-1.247.168-1.367-.072-.119-.264-.191-.551-.335z" />
+            </svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    {/* Footer */}
+    <Footer />
+  </main>
 </>
 );
 }
