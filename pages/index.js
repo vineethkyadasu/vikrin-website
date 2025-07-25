@@ -78,23 +78,22 @@ export default function Home() {
   return (
     <>
       <Head>
-  <title>Vikrin - Digital Powerhouse for Websites & Marketing</title>
-  <meta name="description" content="Vikrin builds stunning websites and drives growth with cutting-edge digital marketing. Let's talk and bring your vision to life." />
-  
-  {/* Open Graph (for Facebook, LinkedIn, etc.) */}
-  <meta property="og:title" content="Vikrin - Digital Powerhouse" />
-  <meta property="og:description" content="We build stunning websites & drive growth with digital marketing. Let’s talk." />
+  <title>Vikrin – Websites That Convert & Marketing That Delivers</title>
+  <meta
+    name="description"
+    content="Build high-performance websites and scale your business with digital marketing that gets results. Let’s talk soon."
+  />
+  <meta property="og:title" content="Vikrin – Web & Digital Growth Agency" />
+  <meta property="og:description" content="We build websites that convert and boost business growth with expert marketing. Ready when you are." />
   <meta property="og:image" content="/meta-image.png" />
   <meta property="og:url" content="https://vikrin.com" />
   <meta property="og:type" content="website" />
 
-  {/* Twitter */}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vikrin - Digital Powerhouse" />
-  <meta name="twitter:description" content="We build stunning websites & drive growth with digital marketing." />
+  <meta name="twitter:title" content="Vikrin – Web & Digital Growth Agency" />
+  <meta name="twitter:description" content="High-performance websites. Smart digital marketing. Measurable results." />
   <meta name="twitter:image" content="/meta-image.png" />
 
-  {/* Favicon */}
   <link rel="icon" href="/favicon.ico" />
 </Head>
 
