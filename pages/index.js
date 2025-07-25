@@ -287,9 +287,9 @@ export default function Home() {
     <div className="bg-white rounded-2xl shadow p-10 md:p-14 text-center md:text-left">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">Let's Build Something Great</h2>
+          <h2 className="text-4xl font-bold mb-4 text-[#1F3CAB]">Let&#39;s Build Something Great</h2>
           <p className="text-lg text-gray-700">
-            Reach out via your preferred channel. We'll get back within 24 hours.
+            Reach out via your preferred channel. We&#39;ll get back within 24 hours.
           </p>
         </div>
 
