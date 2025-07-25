@@ -73,6 +73,15 @@ function HeroSection() {
   );
 }
 
+<section id="about" className="py-20 px-6 bg-white">
+  <div className="max-w-5xl mx-auto text-center">
+    <h2 className="text-4xl font-bold text-[#1F3CAB] mb-6">About Us</h2>
+    <p className="text-lg text-gray-700">
+      We build scalable, high-performance web solutions for modern businesses.
+    </p>
+  </div>
+</section>
+
 // ✅ Main Home Component
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
