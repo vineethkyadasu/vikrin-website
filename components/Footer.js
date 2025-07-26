@@ -18,7 +18,7 @@ export default function Footer() {
             <a href="https://linkedin.com/company/vikrin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin className="w-5 h-5 hover:text-gray-300" />
             </a>
-            <a href="https://instagram.com/vikrin" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com/vikrintech" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram className="w-5 h-5 hover:text-gray-300" />
             </a>
           </div>
