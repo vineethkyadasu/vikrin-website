@@ -41,15 +41,15 @@ function HeroSection() {
           <div className="pt-4 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
   <a
     href="#contact"
-    className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold text-center"
+    className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold text-center shadow-md hover:scale-105 transition-transform duration-200"
   >
-    Let’s Talk
+    🚀 Let’s Talk
   </a>
   <a
     href="#portfolio"
-    className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black text-center"
+    className="bg-white/10 border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black text-center shadow-md hover:scale-105 transition-transform duration-200"
   >
-    See Our Work
+    🎯 See Our Work
   </a>
 </div>
         </div>
@@ -74,12 +74,29 @@ function HeroSection() {
   );
 }
 
-<section id="about" className="py-20 px-6 bg-white">
-  <div className="max-w-5xl mx-auto text-center">
-    <h2 className="text-4xl font-bold text-[#1F3CAB] mb-6">About Us</h2>
-    <p className="text-lg text-gray-700">
-      We build scalable, high-performance web solutions for modern businesses.
-    </p>
+<section id="about" className="py-24 px-6 max-w-6xl mx-auto text-center text-gray-800">
+  <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#1F3CAB]">
+    Who We Are
+  </h2>
+  <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+    At <span className="font-semibold text-[#1F3CAB]">Vikrin</span>, we’re not just a digital agency — we’re your strategic partner for growth. 
+    From building high-performance websites to executing campaigns that drive results, 
+    we help businesses thrive in the digital world.
+  </p>
+
+  <div className="mt-10 grid gap-8 md:grid-cols-2">
+    <div className="bg-white rounded-xl shadow-md p-6 text-left">
+      <h3 className="text-xl font-semibold mb-2">🚀 Our Mission</h3>
+      <p>To empower startups and growing businesses with powerful websites and growth marketing strategies that deliver real impact.</p>
+    </div>
+    <div className="bg-white rounded-xl shadow-md p-6 text-left">
+      <h3 className="text-xl font-semibold mb-2">🎯 Why Choose Us?</h3>
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Custom-built websites with performance in mind</li>
+        <li>SEO, Ads & Funnels that convert visitors into leads</li>
+        <li>Dedicated support and transparent communication</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -92,17 +109,17 @@ export default function Home() {
   <title>Vikrin – Websites That Convert & Marketing That Delivers</title>
   <meta
     name="description"
-    content="Build high-performance websites and scale your business with digital marketing that gets results. Let’s talk soon."
+    content="Build high-performance websites and scale your business with digital marketing that gets results. Let’s Talk. See Our Work."
   />
   <meta property="og:title" content="Vikrin – Web & Digital Growth Agency" />
-  <meta property="og:description" content="We build websites that convert and boost business growth with expert marketing. Ready when you are." />
+  <meta property="og:description" content="We build websites that convert and boost business growth with expert marketing. Let’s Talk. See Our Work." />
   <meta property="og:image" content="/meta-image.png" />
   <meta property="og:url" content="https://vikrin.com" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Vikrin – Web & Digital Growth Agency" />
-  <meta name="twitter:description" content="High-performance websites. Smart digital marketing. Measurable results." />
+  <meta name="twitter:description" content="High-performance websites. Smart digital marketing. Let’s Talk. See Our Work." />
   <meta name="twitter:image" content="/meta-image.png" />
 
   <link rel="icon" href="/favicon.ico" />

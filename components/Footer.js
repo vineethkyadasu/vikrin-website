@@ -29,7 +29,7 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             {[
-              { label: "About", href: "#about", isAnchor: true },
+              { label: "About", href: "/about", isAnchor: false },
               { label: "Services", href: "#services", isAnchor: true },
               { label: "Contact", href: "#contact", isAnchor: true },
               { label: "Privacy Policy", href: "/privacy-policy", isAnchor: false },
